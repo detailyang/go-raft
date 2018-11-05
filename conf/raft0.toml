@@ -1,0 +1,33 @@
+title = "raft0 config"
+loglevel = "debug"
+
+[raft]
+id = "raft0"
+bind = "127.0.0.1:8000"
+#nodes = [["raft0", "127.0.0.1:8000"], ["raft1", "127.0.0.1:8001"], ["raft2", "127.0.0.1:8002"]]
+nodes = [["raft0", "127.0.0.1:8000"], ["raft1", "127.0.0.1:8001"]]
+is_learner = false
+
+log_store_path = "./raft/0/log_store"
+stable_store_path = "./raft/0/stable_store"
+snapshot_store_path = "./raft/0/snapshot_store"
+
+heartbeat_timeout = 800
+leader_lease_timeout = 500
+election_timeout = 1000
+commit_timeout = 1000
+replicate_timeout = 1000
+snapshot_restore_timeout = 60000
+snapshot_store_timeout = 60000
+
+snapshot_interval = 5000000
+snapshot_threshold = 1000
+
+max_append_logs = 1000
+
+[kvstore]
+bind = "0.0.0.0:7000"
+path = "./kvstore/0"
+
+[profile]
+bind = "0.0.0.0:6000"
