@@ -43,7 +43,7 @@ There is a simple kv store exposed with redis-protocol on specified port. So we 
 * set kv
     1. redis-cli -p 7000 set a b
 * get kv
-    2. redis-cli -p 7001 get a
+    1. redis-cli -p 7001 get a
 
 ### Two nodes and add new node
 * startup nodes:
@@ -59,11 +59,11 @@ There is a simple kv store exposed with redis-protocol on specified port. So we 
     2. bin/raftd --conf conf/raft2.toml
 
 ### three nodes and delete node
-   * startup nodes:
+* startup nodes:
     1. bin/raftd --conf conf/raft0.toml
     2. bin/raftd --conf conf/raft1.toml 
     3. bin/raftd --conf conf/raft2.toml 
-   * delete node:
+* delete node:
     1. redis-cli -p 7000 cluster-left raft2 127.0.0.1:8002
 
 ## License
