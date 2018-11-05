@@ -1,3 +1,11 @@
+# departed
+
+Sadly, I lost about 5000 lines go code because of the stupid gitignore rule: 
+
+ * patterns match files in any directory
+
+always remember using`git status` to track the repo and commit the large number of buggly code in startup then reorganize the commits:)
+
 # go-raft
 
 It's my toy-level raft implement of [CONSENSUS: BRIDGING THEORY AND PRACTICE](https://ramcloud.stanford.edu/~ongaro/thesis.pdf) which no perf and no tests in time. And I just want to know how raft works:) Anyone want to use it in production, you are at at your own risk. It's better to use [etcd/raft](https://github.com/etcd-io/etcd/tree/master/raft) or [hashicorp/raft](https://github.com/hashicorp/raft) to embrace distributed system.
